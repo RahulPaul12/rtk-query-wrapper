@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <section className="container">
+    <section className="container my-10">
         <div className="grid grid-cols-4 gap-6">
             <ProductCard/>
         </div>
