@@ -18,8 +18,11 @@ export const postapi = createApi({
     endpoints:(build) => ({
         getPost: build.query <PostsResponse[], void>({
             query: () => '/posts',
+        }),
+        getSinglePost: build.query<Post,number>({
+          query: (id) => `/posts/${id}`,
         })
     })
 })
-export const { useGetPostQuery } = postapi
+export const { useGetPostQuery , useGetSinglePostQuery, usePrefetch } = postapi
 
