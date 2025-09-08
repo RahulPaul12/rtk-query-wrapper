@@ -23,12 +23,18 @@ export const postapi = createApi({
           query: (id) => `/posts/${id}`,
         }),
         addNewPost: build.mutation({
-          query: (newpost)=>({
+          query: (data)=>({
             url:'/posts/add',
+            method: 'POST',
             headers:{ 'Content-Type' : 'application/json' },
-            body:newpost
+            body:{
+              userId: 5,
+              title : data.title,
+              body : data.body
+            }
           })
-        })
+        }),
+        
     })
 })
 export const { useGetPostQuery , useGetSinglePostQuery, useAddNewPostMutation , usePrefetch } = postapi
